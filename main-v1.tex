@@ -1,30 +1,36 @@
-\documentclass[conference]{IEEEtran}
+\documentclass[10pt,letterpaper,twocolumn]{article}
+\usepackage{smallsat2027}
 
-% Core packages for a technical conference paper.
-\usepackage{cite}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{url}
-
-% Figures are stored in the figures/ directory.
+% Figures are stored in figures/. The style package provides graphicx.
 \graphicspath{{figures/}}
-
-\begin{document}
 
 \title{ALP}
 
-\author{\IEEEauthorblockN{Roshni Kankanala}}
+\author{Roshni Kankanala}
+\date{41st Annual Small Satellite Conference, 2027}
 
+% Add the assigned code when available, e.g. SSC27-P1-00.
+\renewcommand{\smallsatpaperid}{}
+
+\begin{document}
+
+\fancypagestyle{firstpage}{%
+  \fancyhf{}%
+  \rhead{\footnotesize \smallsatpaperid}%
+  \lfoot{\footnotesize \smallsatauthor}%
+  \cfoot{\footnotesize \thepage}%
+  \rfoot{\footnotesize \smallsatconference}%
+}
+
+\thispagestyle{firstpage}
+
+\twocolumn[
 \maketitle
-
 \begin{abstract}
 % TODO: Add a concise summary of the problem, approach, and key findings.
 \end{abstract}
-
-\begin{IEEEkeywords}
-% TODO: Add three to five keywords.
-\end{IEEEkeywords}
+\keywords{TODO: Add three to five keywords}
+]
 
 \section{Introduction}
 % TODO: Introduce the problem, motivation, and contributions.
