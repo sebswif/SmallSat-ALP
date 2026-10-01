@@ -1,0 +1,208 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\setlist[enumerate]{label=\textbf{Rule \arabic*.}, leftmargin=*, itemsep=0.55em, topsep=0.75em}
+
+\begin{document}
+
+\section*{Writing Rules}
+
+\begin{enumerate}
+
+\item Write in formal journal-paper prose. Do not use conversational phrasing, slogans, compressed labels, or language that sounds like a presentation script.
+
+\item Do not use a colon in prose. A colon may be used only when introducing a displayed equation on the next line.
+
+\item Do not use semicolons as a substitute for clear sentence structure. Prefer two controlled sentences when a sentence becomes overburdened.
+
+\item Do not use em dashes for emphasis, interruption, or rhetorical contrast. Use normal sentence structure.
+
+\item Do not use arrows in prose or equations unless explicitly requested.
+
+\item Do not write equations in prose. Any equation must appear on its own line in proper \LaTeX{} display syntax.
+
+\item Introduce an equation with a complete sentence, then place the equation on its own line.
+
+\item Follow an equation with a sentence that explains its role when the surrounding text does not already make that role clear.
+
+\item Use technical terms consistently. Do not vary terminology for style.
+
+\item Use \emph{NanoSat}, not spacecraft, unless discussing spacecraft as a general class outside the DarkNESS terminology.
+
+\item Use \emph{environmental context} when the meaning is broader than orbital context.
+
+\item Use \emph{operations architecture}, \emph{living DAO artifacts}, and \emph{system operating modes} consistently. Reserve \emph{machine-readable operations contract} for future work.
+
+\item Write \emph{the DAO} in prose. DAO takes an article whenever it appears as a sentence subject or object. Bare DAO is acceptable in headings, captions, table labels, and attributive uses such as \emph{DAO artifacts} when another determiner is present.
+
+\item Use \emph{artifacts} both for the DAO products that carry the architecture and for preserved rationale and verification outputs. Do not use \emph{evidence} or \emph{evidence records}. Qualify the word where context does not disambiguate, as in \emph{DAO artifacts} for the products and \emph{verification artifacts} for preserved outputs.
+
+\item Do not use \emph{execution model} unless the user explicitly reintroduces that term.
+
+\item Avoid contrastive constructions built around \emph{rather than}. State the positive claim directly.
+
+\item Avoid casual contrastive constructions such as \emph{not just}, \emph{not merely}, \emph{not simply}, and \emph{not only}. Use direct architecture language.
+
+\item Avoid promotional phrasing such as \emph{novel}, \emph{powerful}, \emph{robust}, \emph{rich}, \emph{seamless}, \emph{unique}, and \emph{natural test case} unless the claim is technically necessary and supported.
+
+\item Avoid informal compound descriptors such as \emph{constraint-rich}, \emph{planner-facing}, \emph{forcing case}, and \emph{timeline-generation task}. Replace them with precise technical statements.
+
+\item Avoid vague intensifiers such as \emph{highly}, \emph{very}, \emph{directly}, \emph{clearly}, and \emph{strongly} unless they carry measurable technical meaning.
+
+\item Avoid unnecessary metadiscourse. Do not tell the reader that the paper is important, useful, disciplined, or structured unless the sentence explains a concrete technical role.
+
+\item Do not overstate maturity. If the paper prepares for agent-based mission planning, automated verification, or command-plan generation, do not claim those capabilities are complete.
+
+\item Keep scope boundaries explicit. State what the paper delivers and what it prepares for.
+
+\item Do not retell the DarkNESS mission paper in the introduction. Introduce mission facts only when they explain the operations-architecture problem.
+
+\item In the introduction, introduce DarkNESS mission content before DoDAF. The mission facts establish the operations problem that motivates the framework.
+
+\item In the first introduction paragraph, establish the general operations problem for observatory-class NanoSats and do not name DarkNESS.
+
+\item In the second introduction paragraph, introduce DarkNESS through operational intent and planning conditions, including the observation baseline and the data-return contention that make observation windows scarce.
+
+\item In the third introduction paragraph, introduce DoDAF conceptually. Do not list DoDAF products there.
+
+\item In the fourth introduction paragraph, define the DAO through its tailoring criterion and its operational value.
+
+\item In the fifth introduction paragraph, state the paper contribution and preview the structure without embellishment.
+
+\item DoDAF product names belong in the method section unless the user explicitly asks for them earlier.
+
+\item Do not dump product names in the abstract or opening introduction paragraphs.
+
+\item When DoDAF products are named, use the selected DAO set consistently. The selected set is OV-1, OV-2, OV-3, OV-4, OV-5b, OV-6a, OV-6b, OV-6c, SV-7, DIV-2, and AV-2.
+
+\item Treat DoDAF as an organizing framework for architectural data and relationships, not as a static documentation package.
+
+\item Describe DoDAF Viewpoints as separating stakeholder concerns while preserving relationships across the architecture.
+
+\item Do not describe the DAO as generic DoDAF use. The DAO is a tailored method based on operational value.
+
+\item State the DAO tailoring criterion in stable form. The DAO retains the products that define what mission operations must know, check, compare, command, or record.
+
+\item Do not make living DAO artifacts sound abstract. Tie them to maintained mission knowledge, rules, state variables, events, data definitions, measures, and recorded rule outcomes.
+
+\item Do not describe the software environment with empty language. When details are unknown, write only what is known and leave implementation specifics for later sections.
+
+\item Do not invent software implementation details. Do not assume versioning, schema structure, database form, dashboard behavior, or output syntax without user confirmation.
+
+\item Do not overdefine the machine-readable operations contract in the introduction. State its role, then reserve fields and tables for the method or contract section.
+
+\item Use the imaging activity as the primary DarkNESS decomposition thread.
+
+\item Do not give the cryocooler the same traceable demonstration status as imaging in this paper. Treat cryocooler operation as an important constraint source unless the user changes the scope.
+
+\item State DarkNESS science intent through operations. The relevant operations facts are cryogenic Skipper-CCD imaging, umbral observation windows, target geometry, thermal control, readout sequence, resource margins, storage, communications access, and compatible system operating modes.
+
+\item Do not introduce DarkNESS with a broad mission summary when the paragraph needs only the planning dependencies.
+
+\item Use FNAL only where it matters to the instrument, science processing, or mission context.
+
+\item Preserve the distinction between the Skipper-CCD sensor module and the sLTA readout electronics.
+
+\item State that the sLTA readout electronics require 10 W when that detail supports a resource or planning constraint.
+
+\item State that the CCD module contains four sensors requiring thermal control near 170 K when that detail supports detector readiness or thermal-state rules.
+
+\item State that the cryocooler is a 10 W thermal-control element when that detail supports resource coupling.
+
+\item Describe cryocooler control by voltage and variable resistance only when discussing the rule, state, or command representation.
+
+\item Do not call the cameras shuttered. The imaging sequence must respect the shutterless exposure and readout behavior.
+
+\item Preserve the sequence of sLTA turn-on, configuration, exposure, and readout when describing imaging.
+
+\item State that the exposure and readout sequence must fit within a sliding umbral window when discussing the schedulable imaging activity.
+
+\item State that the mission design is orbit agnostic only when discussing boundary cases or environmental context.
+
+\item When orbit cases are needed, identify ISS-like and Sun-synchronous Noon-LTAN cases as mission design boundary cases.
+
+\item Do not reduce observation validity to target access. A valid observation also depends on detector readiness, thermal stability, resource margin, storage, communications, operating-mode compatibility, and recovery.
+
+\item Use \emph{admissible} only when referring to a candidate activity that satisfies rule conditions.
+
+\item Do not use the phrase \emph{valid science opportunity} unless the surrounding text defines the state conditions that make the opportunity valid.
+
+\item Do not call a planning condition a constraint unless it actually limits entry, sustainment, exit, inhibition, selection, or recovery.
+
+\item Keep paragraph progression controlled. Each paragraph should advance one step in the argument.
+
+\item Avoid sentences that repeat the same relationship with different nouns. Collapse repetition into one precise sentence.
+
+\item State the traceability relationship from mission intent to NanoSat behavior at most once per section. Do not restate it in adjacent paragraphs or in both the opening and closing of the same section.
+
+\item Avoid noun stacks that obscure agency or logic. Rewrite them into explicit relationships.
+
+\item Avoid overlong opening clauses. Begin sentences with the main subject when possible.
+
+\item Do not use \emph{this} without a clear noun when ambiguity is possible.
+
+\item Use active technical verbs where they improve clarity. Prefer \emph{defines}, \emph{constrains}, \emph{records}, \emph{evaluates}, \emph{maps}, \emph{translates}, and \emph{preserves}.
+
+\item Avoid weak verbs such as \emph{serves as}, \emph{provides a way to}, and \emph{helps} when a stronger technical verb is available.
+
+\item Do not claim traceability unless the sentence states what is traced from and what is traced to.
+
+\item Do not use traceability as a general virtue. Use it as a specific architecture property connecting mission intent, artifacts, rules, and planned NanoSat behavior.
+
+\item Do not use \emph{interface} loosely. If used, specify what it connects.
+
+\item Do not use \emph{framework} repeatedly in adjacent sentences. Replace repeated instances with the specific role being discussed.
+
+\item Avoid generic systems-engineering filler such as \emph{holistic}, \emph{end-to-end}, \emph{integrated}, \emph{robust}, and \emph{disciplined approach} unless the text defines the specific integration.
+
+\item Avoid abstract phrases such as \emph{mission knowledge changes} unless the sentence identifies examples such as constraints, operating rules, state variables, events, measures, or artifacts.
+
+\item Keep citations attached to claims, not to entire paragraphs when the paragraph contains several distinct claims.
+
+\item Do not cite common prose claims. Cite DoDAF definitions, DarkNESS mission facts, instrument facts, orbit assumptions, and quantitative values.
+
+\item Do not overload the introduction with numbers. Include a value only when it explains why planning or rule representation is needed.
+
+\item Keep technical precision over stylistic variety. Repeated technical terms are acceptable when they prevent ambiguity.
+
+\item Use abbreviations only after they are introduced. Do not introduce abbreviations that are used only once.
+
+\item Do not use contractions.
+
+\item Do not use first person unless the user explicitly asks for a reflective or process note.
+
+\item Do not address the reader directly in paper prose.
+
+\item Do not use bullet lists in paper prose unless the user explicitly requests a list or table.
+
+\item Avoid headers inside a short introduction unless the manuscript format requires them.
+
+\item Keep the abstract and introduction distinct. The abstract states the whole contribution. The introduction builds the argument.
+
+\item Do not let the introduction sound like a requirements list. Convert lists of conditions into relationships that explain why architecture is needed.
+
+\item Do not make the first sentence too narrow. The introduction should begin with the general class of observatory-class NanoSats.
+
+\item End the first paragraph with the need for mission intent to be represented in a form that planning tools can evaluate while preserving traceability to NanoSat behavior.
+
+\item End the introduction with the forward path from the architectural baseline to procedures, reviews, verification cases, and future planning tools.
+
+\item Keep the final sentence grounded in traceability from mission intent to planned NanoSat behavior.
+
+\item Avoid saying that DAO \emph{uses DarkNESS as a test case} when a stronger formulation is available. Prefer that DarkNESS motivates and demonstrates the method through imaging-activity decomposition.
+
+\item Do not describe the paper contribution as broad mission design. The contribution is the DAO tailoring method and the living DAO artifact set applied to DarkNESS as a traceable architecture baseline. The machine-readable operations contract is future work.
+
+\item Maintain a formal register even when compressing. Concision should not make the prose sound informal.
+
+\item When revising, preserve technical meaning before improving style.
+
+\item When unsure whether a phrase is too informal, replace it with a concrete technical relationship.
+
+\end{enumerate}
+
+\end{document}
