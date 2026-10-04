@@ -45,19 +45,17 @@ For years, scientists have tried to understand the nature of dark matter, an inf
 
 Charge Coupled Devices (CCDs) are silicon-based detectors which detect photons/ionizing radiation and convert it into a digital image or a quantitative dataset. These devices are primarily based on the photoelectric effect. The surface of a CCD is divided into squares called ``pixels'' and when a photon strikes a pixel, it knocks the electrons free, after which these charges are measured and converted into an image. Skipper CCDs are an advanced version of traditional CCDs and have significantly less readout noise compared to standard CCDs. In a standard CCD, the pixel charge is dumped onto the output node, measured once and wiped. However, a Skipper CCD has a modified output stage that allows this charge to be measured and ``skipped'' back and forth to be measured again, non-destructively.
 
-The DarkNESS CubeSat mission aims to detect this dark matter through Skipper Charge Coupled Devices (CCDs), which have demonstrated laboratory sensitivity to X-rays from hypothetical dark matter decay. DarkNESS is a 6U CubeSat deployed in Low Earth Orbit (LEO) that serves as both a targeted search for dark matter and a technology demonstration for Skipper CCDs.
-Operating in LEO  
-The main scientific objectives of this mission are:
+The DarkNESS CubeSat mission uses Skipper Charge Coupled Devices (CCDs), which have demonstrated laboratory sensitivity to X-rays, to search for dark matter and demonstrate the detector technology in orbit. The 6U CubeSat operates in Low Earth Orbit (LEO). Its main scientific objectives are:
 
 \begin{enumerate}
-  \item \textbf{Detection of strongly interacting sub-GeV dark matter.}
-  The CubeSat targets the constellation Cygnus, which lies near the direction of the solar system's motion through the galactic dark matter halo, effectively flying into a dark matter ``wind''. DarkNESS looks for a distinct, predictable daily variation in signal rate and uses the Earth's shadow as a shielding mechanism to ensure this predictable variation.
+  \item \textbf{Search for strongly interacting sub-GeV dark matter.}
+  For this search, DarkNESS targets Cygnus, near the direction of the solar system's motion through the Galactic dark matter halo. The resulting dark matter wind may produce a predictable daily modulation in the event rate as Earth shields the detector along its orbit.
 
-  \item \textbf{Detection of X-ray signatures of dark matter.}
-  Sterile neutrinos and other dark matter candidates in the keV mass scale are hypothesized to decay into an active neutrino and a monoenergetic X-ray photon. The CubeSat points towards the Galactic Center (Sagittarius A* region), where dark matter density is the highest. Observations happen during orbital umbra to eliminate solar X-ray background contamination\cite{alpine2025darkness}.
+  \item \textbf{Search for X-rays from dark matter decay.}
+  For this search, DarkNESS points toward the Galactic Center, where the dark matter density is expected to be high, and looks for a monoenergetic X-ray from the decay of a keV-scale dark matter candidate, such as a sterile neutrino, into an active neutrino and a photon. Observations are scheduled during orbital umbra to reduce solar X-ray background contamination\cite{alpine2025darkness}.
 \end{enumerate}
 
-An axion-like particle (ALP) is a hypothetical pseudo particle with possible connection to dark matter and early universe physics. ALPs can be ``converted'' into photons via interactions with magnetic fields through the inverse Primakoff effect\cite{yamamoto2020alp}.
+This paper separately considers two possible source channels for axion-like particles (ALPs), hypothetical pseudoscalar particles that may be connected to dark matter and early-universe physics. The cosmological channel is treated here as a diffuse flux of ALPs arriving from cosmological distances; the solar channel is a directional flux of ALPs produced in the Sun. In both channels, ALPs may convert into X-ray photons through the inverse Primakoff effect in Earth's magnetic field\cite{yamamoto2020alp,davoudiasl2008gecosax}. Thus, the channels differ in their origin and expected sky distribution but share the same conversion mechanism.
 
 The purpose of this paper is to answer this research question:
 
@@ -66,10 +64,10 @@ The purpose of this paper is to answer this research question:
 \end{quote}
 
 \begin{enumerate}
-  \item Is a cosmological ALP channel feasible for a CubeSat mission in LEO using Skipper-CCDs?
-  \item Is a solar ALP channel feasible for a CubeSat in LEO using Skipper-CCDs?
-  \item What targeting strategy and considerations define the CubeSat concept of operations?
-  \item What background monitoring (proxies, control exposures, particle monitor) keeps the feasible channel's signal identifiable?
+  \item How feasible is a cosmological ALP source channel for a LEO CubeSat using Skipper-CCDs, assuming conversion in Earth's magnetic field?
+  \item How feasible is a solar ALP source channel for a LEO CubeSat using Skipper-CCDs, assuming conversion in Earth's magnetic field?
+  \item How should the CubeSat's pointing strategy and observing constraints be set to observe whichever ALP channel is feasible?
+  \item How should the CubeSat monitor backgrounds---including with proxies, control exposures, and a particle monitor---to distinguish a feasible channel's signal?
 \end{enumerate}
 
 \section{Science and Background}
