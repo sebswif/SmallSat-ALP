@@ -11,7 +11,7 @@
 % Figures are stored in figures/. The style package provides graphicx.
 \graphicspath{{figures/}}
 
-\title{Mission Design for Astrophysical ALP Observations using Skipper-CCDs in LEO}
+\title{CubeSat Design for Astrophysical ALP Observations using Skipper-CCDs}
 
 \author{Roshni Kankanala}
 \date{41st Annual Small Satellite Conference, 2027}
@@ -41,9 +41,7 @@
 
 \section{Introduction}
 % Student source: Draft 1 -- AE 298 RES, by Roshni Kankanala.
-For years, scientists have tried to understand the nature of dark matter, an influential component that shapes galaxies, yet remains a mystery and is entirely invisible to our most advanced telescopes. This dark matter is theorized to give galaxies extra mass, generating extra gravity that prevents them from tearing apart due to their rotational speeds\cite{cernDarkMatter}.
-
-An axion-like particle (ALP) is a hypothetical pseudo particle with possible connection to dark matter and early universe physics. ALPs can be ``converted'' into photons via interactions with magnetic fields through the inverse Primakoff effect\cite{yamamoto2020alp}.
+For years, scientists have tried to understand the nature of dark matter, an influential component that shapes galaxies, yet remains a mystery and is entirely invisible to our most advanced telescopes. This dark matter is theorized to give galaxies extra mass, generating extra gravity that prevents them from tearing apart due to their rotational speeds\cite{cernDarkMatter}. Most dark matter searches usually operate underground, as seen in the SuperCDMS and LUX-ZEPLIN experiments, but the Earth's atmosphere and crust acts as a barrier that slows down or scatters X-ray signatures from dark matter decay.~\cite{CITE}
 
 Charge Coupled Devices (CCDs) are silicon-based detectors which detect photons/ionizing radiation and convert it into a digital image or a quantitative dataset. These devices are primarily based on the photoelectric effect. The surface of a CCD is divided into squares called ``pixels'' and when a photon strikes a pixel, it knocks the electrons free, after which these charges are measured and converted into an image. Skipper CCDs are an advanced version of traditional CCDs and have significantly less readout noise compared to standard CCDs. In a standard CCD, the pixel charge is dumped onto the output node, measured once and wiped. However, a Skipper CCD has a modified output stage that allows this charge to be measured and ``skipped'' back and forth to be measured again, non-destructively.
 
@@ -57,30 +55,25 @@ The DarkNESS CubeSat mission aims to detect this dark matter through Skipper Cha
   Sterile neutrinos and other dark matter candidates in the keV mass scale are hypothesized to decay into an active neutrino and a monoenergetic X-ray photon. The CubeSat points towards the Galactic Center (Sagittarius A* region), where dark matter density is the highest. Observations happen during orbital umbra to eliminate solar X-ray background contamination\cite{alpine2025darkness}.
 \end{enumerate}
 
+An axion-like particle (ALP) is a hypothetical pseudo particle with possible connection to dark matter and early universe physics. ALPs can be ``converted'' into photons via interactions with magnetic fields through the inverse Primakoff effect\cite{yamamoto2020alp}.
+
 The purpose of this paper is to answer this research question:
 
 \begin{quote}
-``Using the DarkNESS platform, what observing ConOps maximizes the identifiable geomagnetic ALP--photon conversion signal against particle and diffuse X-ray backgrounds, and what does that ConOps require of the mission?''
+``Which astrophysical ALP source channels can a LEO X-ray observatory identify through conversion in Earth’s magnetic field, and what instrument and observing strategy make those signals measurable against particle and diffuse X-ray backgrounds?''
 \end{quote}
 
 \begin{enumerate}
-  \item Which pointing law keeps the most conversion information after the background regression, under radiator, limb, slew and telemetry constraints?
-  \item How much is gained over the nominal sterile-neutrino (Galactic Centre) pointing?
-  \item What does umbra-only versus sunlit imaging cost, and what evidence would justify sunlit operation?
-  \item What background monitoring (proxies, control exposures, particle monitor) keeps the signal identifiable?
+  \item Is a cosmological ALP channel feasible for a CubeSat mission in LEO using Skipper-CCDs?
+  \item Is a solar ALP channel feasible for a CubeSat in LEO using Skipper-CCDs?
+  \item What targeting strategy and considerations define the CubeSat concept of operations?
+  \item What background monitoring (proxies, control exposures, particle monitor) keeps the feasible channel's signal identifiable?
 \end{enumerate}
 
-\section{Literature Review}
+\section{Science and Background}
 
-\subsection{The Darkness Mission}
-\subsection{Skipper-CCDs}
-\subsection{Axions and Axion-like Particles}
-
-\section{System Overview}
+\section{Mission Concept}
 % TODO: Describe the ALP concept, architecture, or system.
-
-\section{Methodology}
-% TODO: Describe the analysis, design, or experimental methods.
 
 \section{Results and Discussion}
 % TODO: Present results and discuss their implications.
