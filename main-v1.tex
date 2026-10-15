@@ -37,32 +37,34 @@
 \begin{abstract}
 % TODO: Add a concise summary of the problem, approach, and key findings.
 \end{abstract}
-\keywords{TODO: Add three to five keywords}
+\keywords{dark matter, skipper-CCDs, CubeSat, mission concept, Axions, Axion-like particles}
 ]
 
 \section{Introduction}
 % Student source: Draft 1 -- AE 298 RES, by Roshni Kankanala.
-For years, scientists have tried to understand the nature of dark matter, an influential component that shapes galaxies, yet remains a mystery and is invisible to our telescopes. Dark matter is theorized to give galaxies extra mass, generating the extra gravity needed to explain their rotational speeds\cite{cernDarkMatter}. Most dark matter searches operate underground, as in the SuperCDMS and LUX-ZEPLIN experiments. Earth's atmosphere and crust can attenuate strongly interacting dark matter before it reaches an underground detector, while the atmosphere absorbs astrophysical X-rays. Observations from low Earth orbit (LEO) can therefore provide access to particle and photon signals that are difficult to observe from the ground\cite{alpine2025darkness}.
+For years, scientists have tried to understand the nature of dark matter, an elusive component of the cosmic mass budget that shapes galaxies, yet remains a mystery and is almost entirely invisible to our most advanced telescopes. Dark matter is theorized to give galaxies mass, generating extra gravity that prevents them from tearing apart due to their rotational speeds\cite{cernDarkMatter}. Most dark matter searches operate underground, such as the SuperCDMS and LUX-ZEPLIN experiments, but the Earth's atmosphere and crust can shield or scatter some faint dark matter signals~\cite{alpine2025darkness}.
 
-Charge-coupled devices (CCDs) are silicon-based detectors that measure photons and other ionizing radiation. When a photon strikes a pixel, it can free electrons; the collected charge is measured and used to estimate the energy deposited in the detector. Skipper-CCDs are an advanced version of traditional CCDs, with lower readout noise. A standard CCD measures the pixel charge once before clearing it, whereas a Skipper-CCD's modified output stage allows the same charge packet to be measured repeatedly and nondestructively. Averaging these measurements supports searches for low-energy ionization and X-ray events\cite{alpine2025darkness}.
+Charge-Coupled Devices (CCDs) are silicon-based detectors that detect ionizing radiation and convert it into digital signals or a quantitative dataset. These devices are based on the photoelectric effect. The surface of a CCD is divided into squares called “pixels” and when a photon strikes a pixel, it knocks the electrons free, after which these charges are measured and converted into an image. Skipper-CCDs are an advanced version of traditional CCDs and have significantly less readout noise compared to standard CCDs. In a standard CCD, the pixel charge is dumped onto the output node, measured once and drained, losing the charge packet. However, a Skipper CCD has a modified output stage that allows this charge to be measured and “skipped” back and forth for repeated, non-destructive, and independent measurements. Averaging these measurements supports searches for low-energy ionization and X-ray events~\cite{alpine2025darkness}.
 
-The DarkNESS CubeSat mission uses Skipper-CCDs, which have demonstrated laboratory sensitivity to X-rays, to search for dark matter and demonstrate the detector technology in orbit. Its 6U spacecraft operates in LEO, where shielding effects that limit underground experiments can be avoided. The published design has two main scientific objectives\cite{alpine2025darkness}:
+DarkNESS is a 6U CubeSat deployed in Low Earth Orbit (LEO) that serves as both a targeted dark matter search and a technology demonstration for Skipper-CCDs in the space environment. It aims to detect dark matter through Skipper-CCDs, which have demonstrated laboratory sensitivity to X-rays from hypothetical dark matter decay. Operating Skipper-CCDs in LEO avoids Earth's shielding effects that limit underground experiments and is useful for observing X-ray signals and dark matter model signals, which are attenuated in Earth's atmosphere before reaching underground instruments. The published design has two main scientific objectives\cite{alpine2025darkness}:
 
 \begin{enumerate}
   \item \textbf{Search for strongly interacting sub-GeV dark matter.}
-  DarkNESS targets Cygnus, near the direction of the Solar System's motion through the Galactic dark matter halo. The resulting dark matter wind may produce a predictable modulation in the event rate as Earth shields the detector along its orbit. Dark matter scattering in silicon would produce low-energy ionization.
+    The CubeSat targets the constellation Cygnus, which lies near the direction of the solar system’s motion through the galactic dark matter halo, effectively flying into a dark matter “wind”. DarkNESS looks for a distinct, predictable daily variation in signal rate and uses the Earth’s shadow as a shielding mechanism to ensure this predictable variation.
 
   \item \textbf{Search for X-rays from dark matter decay.}
-  DarkNESS points toward the Galactic Center, where the dark matter density is expected to be high, and searches for a monoenergetic X-ray from the decay of a keV-scale dark matter candidate, such as a sterile neutrino, into an active neutrino and a photon. Observations are scheduled during orbital umbra to reduce solar X-ray background contamination\cite{alpine2025darkness}.
+    Sterile neutrinos and other dark matter candidates in the keV mass scale are hypothesized to decay into an active neutrino and a monoenergetic X-ray photon. The CubeSat points towards the Galactic Center (Sagittarius A* region), where dark matter density is the highest. Observations happen during orbital umbra to eliminate solar X-ray background contamination \cite{alpine2025darkness}.
 \end{enumerate}
 
-This paper separately considers two possible source channels for axion-like particles (ALPs), hypothetical pseudoscalar particles that may be connected to dark matter and early-universe physics. The cosmological channel is treated here as a diffuse flux of ALPs arriving from cosmological distances; the solar channel is a directional flux of ALPs produced in the Sun. In both channels, ALPs may convert into X-ray photons through the inverse Primakoff effect in Earth's magnetic field\cite{yamamoto2020alp,davoudiasl2008gecosax}. The channels differ in their origin and expected sky distribution but share the same conversion mechanism. Solar ALPs need not constitute the Galactic dark matter population.
+This paper separately considers two possible source channels for axion-like particles (ALPs), hypothetical pseudoscalar particles that may be connected to dark matter and early-universe physics. The cosmological channel is treated here as a diffuse flux of ALPs arriving from cosmological distances; the solar channel is a directional flux of ALPs produced in the Sun. In both channels, ALPs may "convert" into X-ray photons through the inverse Primakoff effect in Earth's magnetic field\cite{yamamoto2020alp,davoudiasl2008gecosax}. The channels differ in their origin and expected sky distribution but share the same conversion mechanism. Solar ALPs need not constitute the Galactic dark matter population.
 
-The purpose of this paper is to answer the following research question:
+The purpose of this paper is to contribute to the following research question:
 
 \begin{quote}
 ``Which astrophysical ALP source channels can a LEO X-ray observatory identify through conversion in Earth's magnetic field, and what instrument and observing strategy make those signals measurable against particle and diffuse X-ray backgrounds?''
 \end{quote}
+
+This work will use DarkNESS as an available platform to assess the feasibility of a third dark matter objective involving ALPs. This dark matter channel and its accessibility by an observatory-class CubeSat will be explored by four specific guiding questions:
 
 \begin{enumerate}
   \item How feasible is a cosmological ALP source channel for a LEO CubeSat using Skipper-CCDs, assuming conversion in Earth's magnetic field?
@@ -71,76 +73,88 @@ The purpose of this paper is to answer the following research question:
   \item How should the CubeSat monitor backgrounds, including with proxies, control exposures, and a particle monitor, to distinguish a feasible channel's signal?
 \end{enumerate}
 
+To address these questions, this paper evaluates the theoretical and operational feasibility of detecting ALPs from LEO. First, analysis of the expected X-ray signals is performed for both cosmological and solar ALP channels using the inverse Primakoff effect to determine which source produces a viable signal within the threshold for detection of Skipper-CCDs. Based on the channel selected, the study drafts an optimized orbital pointing strategy that uses the Earth's magnetic field  and orbital geometry to maximize the detection probability of ALPs. 
+
 \section{Science and Background}
-\subsection{Inverse Primakoff Effect and ALPs}
-An ALP with a photon coupling can convert into a photon in a transverse magnetic field, approximately preserving its energy. The reference calculation assumes weak mixing, negligible absorption, and coherent conversion along the accepted ray\cite{yamamoto2020alp,davoudiasl2008gecosax}. In this limit, the probability is
+\subsection{ALPs and Inverse Primakoff Effect}
+
+ALPs differ significantly from the standard Quantum Chromodynamics (QCD) axions, which were introduced to solve the strong Charge Parity (CP) problem. ALPs are the most common example of Pseudo-Nambu-Goldstone bosons (pNGBs), which are 0-spin bosons with a minuscule mass created due to symmetry breaking at high energy scales. As bosons, they have integral spins and do not obey the Pauli exclusion principle. Their interactions are defined by an effective Lagrangian, a mathematical piece of field theory that allows an ALP to convert into a photon when exposed to an external magnetic field through the inverse Primakoff effect \cite{chakraborti2026probing}. The Lagrangian is defined as 
+
 \begin{equation}
-\begin{aligned}
-P_{a\gamma} &\simeq 2.45\times10^{-21}g_{10}^{2}
- \left(\frac{\mathcal{B}}{\mathrm{T\,m}}\right)^{2},\\
-\mathcal{B} &\equiv\left|\int_0^L\mathbf{B}_{\perp}(s)\,ds\right|,
-\qquad g_{10}\equiv\frac{g_{a\gamma}}{10^{-10}\,\mathrm{GeV}^{-1}}.
-\end{aligned}
-\label{eq:conversion}
+\mathcal{L} \supset -\frac{1}{4} g_{a\gamma} a F_{\mu\nu} \tilde{F}^{\mu\nu}.
 \end{equation}
-Here $g_{a\gamma}$ is the unknown photon coupling, $\mathbf{B}_{\perp}$ is the signed transverse field, and $L$ is the transparent conversion path. The coefficient includes the conversion of tesla and metres to natural units. Coherence requires a small accumulated phase. For a uniform medium, the phase mismatch is
-\begin{equation}
-qL=\frac{(m_a^2-m_\gamma^2)L}{2E},\qquad |qL|\ll1,
-\qquad \hbar=c=1.
-\label{eq:coherence}
-\end{equation}
-The ALP mass $m_a$, effective photon mass $m_\gamma$, and energy $E$ determine the mass reach. A complete ray calculation must include phase cancellation and atmospheric attenuation where these approximations fail.
 
-\subsection{The Cosmological Channel}
-The reference source assumes a nonrelativistic 7~keV dark matter parent with a lifetime much longer than the age of the Universe. Each decay produces two relativistic ALPs with 3.5~keV initial energy. Expansion redshifts this population into a diffuse continuum. Geomagnetic conversion then produces photons that can be absorbed in silicon. The continuum intensity per steradian follows from the decay rate and cosmological expansion\cite{yamamoto2020alp}.
-\begin{equation}
-\begin{aligned}
-\frac{dI_{a,\mathrm{cos}}}{dE}
- &=\frac{c f\rho_{\mathrm{DM},0}}{2\pi m_\chi\tau E H(z)},\\
-1+z&=\frac{m_\chi}{2E},\qquad 0<E\leq\frac{m_\chi}{2}.
-\end{aligned}
-\label{eq:cosmological-flux}
-\end{equation}
-Here $m_\chi$ is the parent mass, $\tau$ its lifetime, and $f$ its present dark matter fraction including the branching probability into two ALPs. The expansion rate $H(z)$ is evaluated in a flat cosmology containing matter and a cosmological constant, with a Hubble constant of 67.4~km~s$^{-1}$~Mpc$^{-1}$, matter density parameter 0.315, and present dark matter density $\rho_{\mathrm{DM},0}$ of 1.26~keV~cm$^{-3}$\cite{planck2018parameters}. The speed of light $c$ is restored in this flux expression.
+In this equation, $\mathcal{L}$ represents the effective interaction Lagrangian density, which describes the interaction between the axion or axion-like particle (ALP) field, denoted by $a$, and the electromagnetic field. The strength of this interaction is determined by the axion-photon coupling constant, $g_{a\gamma}$. The electromagnetic field itself is represented by the field tensor $F_{\mu\nu}$, while $\tilde{F}^{\mu\nu}$ denotes the dual electromagnetic field tensor. Finally, the subscripts and superscripts $\mu$ and $\nu$ serve as spacetime indices.
 
-% Continuum estimate: integrate Eq. (3) from 1 to 3.5 keV using
-% H(z) = H0 * sqrt(0.315*(1+z)^3 + 0.685), c = 2.99792458e10 cm/s,
-% 1 Mpc = 3.085677581491367e24 cm, and 1 Gyr = 3.16e16 s.
-% Multiply by P = 4.4817e-18, A*Omega = 12*0.0955 cm^2 sr,
-% efficiency = 0.5, and T = 23400*187 s. This is an illustrative
-% constant-response continuum estimate, separate from the handout's line.
-The benchmark adopts a coupling of $4.7\times10^{-11}$~GeV$^{-1}$ and a fraction divided by lifetime of $4.0\times10^{-3}$~Gyr$^{-1}$, near the selected stellar and cosmological bounds\cite{dolan2022globular,nygaard2021decaying}. A coherent field integral of 91~T~m, 12~cm$^2$ area, 0.0955~sr aperture, unit quantum efficiency, 50\% usable area, and 23,400~s per day for 187~days give approximately $4\times10^{-4}$ continuum photons between 1 and 3.5~keV. The calculation adopts these values as an illustrative exposure. The handout's separate Galactic-line estimate gives $4.1\times10^{-3}$ photons for the same decay model\cite{darkness2026handout}. Both estimates support a negative result for this benchmark. Other cosmological production models require their own intensity normalization.
+An ALP with a photon coupling can "convert" into a photon in a transverse magnetic field, approximately preserving its energy. The reference calculation assumes weak mixing, negligible absorption, and coherent conversion along the accepted ray\cite{yamamoto2020alp,davoudiasl2008gecosax}. 
+% In this limit, the probability is
+% \begin{equation}
+% \begin{aligned}
+% P_{a\gamma} &\simeq 2.45\times10^{-21}g_{10}^{2}
+%  \left(\frac{\mathcal{B}}{\mathrm{T\,m}}\right)^{2},\\
+% \mathcal{B} &\equiv\left|\int_0^L\mathbf{B}_{\perp}(s)\,ds\right|,
+% \qquad g_{10}\equiv\frac{g_{a\gamma}}{10^{-10}\,\mathrm{GeV}^{-1}}.
+% \end{aligned}
+% \label{eq:conversion}
+% \end{equation}
+% Here $g_{a\gamma}$ is the unknown photon coupling, $\mathbf{B}_{\perp}$ is the signed transverse field, and $L$ is the transparent conversion path. The coefficient includes the conversion of tesla and metres to natural units. Coherence requires a small accumulated phase. For a uniform medium, the phase mismatch is
+% \begin{equation}
+% qL=\frac{(m_a^2-m_\gamma^2)L}{2E},\qquad |qL|\ll1,
+% \qquad \hbar=c=1.
+% \label{eq:coherence}
+% \end{equation}
+% The ALP mass $m_a$, effective photon mass $m_\gamma$, and energy $E$ determine the mass reach. A complete ray calculation must include phase cancellation and atmospheric attenuation where these approximations fail.
 
-\subsection{The Solar Channel}
-The solar reference assumes thermal Primakoff production in the Sun through the same photon coupling that controls geomagnetic conversion. At Earth's mean distance from the Sun, the spectrum integrated over the solar disk is\cite{davoudiasl2008gecosax}
-\begin{equation}
-\frac{d\Phi_{a,\odot}}{dE}=6.02\times10^{10}g_{10}^{2}
- \frac{(E/\mathrm{keV})^{2.481}e^{-E/(1.205\,\mathrm{keV})}}
- {\mathrm{cm}^{2}\,\mathrm{s}\,\mathrm{keV}}.
-\label{eq:solar-flux}
-\end{equation}
-The mean energy is 4.2~keV. In the occulted-Sun concept, ALPs traverse Earth and convert along the transparent path between the nightside atmosphere and the satellite. The instrument points toward the occulted solar core while Earth blocks direct solar X-rays. Solar production and geomagnetic conversion each depend quadratically on the coupling, giving a fourth-power dependence of the photon rate. Atmospheric transmission, field geometry, and coherence must be evaluated along this shorter path.
+% % \subsection{The Cosmological Channel}
+% % The reference source assumes a nonrelativistic 7~keV dark matter parent with a lifetime much longer than the age of the Universe. Each decay produces two relativistic ALPs with 3.5~keV initial energy. Expansion redshifts this population into a diffuse continuum. Geomagnetic conversion then produces photons that can be absorbed in silicon. The continuum intensity per steradian follows from the decay rate and cosmological expansion\cite{yamamoto2020alp}.
+% % \begin{equation}
+% % \begin{aligned}
+% % \frac{dI_{a,\mathrm{cos}}}{dE}
+% %  &=\frac{c f\rho_{\mathrm{DM},0}}{2\pi m_\chi\tau E H(z)},\\
+% % 1+z&=\frac{m_\chi}{2E},\qquad 0<E\leq\frac{m_\chi}{2}.
+% % \end{aligned}
+% % \label{eq:cosmological-flux}
+% % \end{equation}
+% % Here $m_\chi$ is the parent mass, $\tau$ its lifetime, and $f$ its present dark matter fraction including the branching probability into two ALPs. The expansion rate $H(z)$ is evaluated in a flat cosmology containing matter and a cosmological constant, with a Hubble constant of 67.4~km~s$^{-1}$~Mpc$^{-1}$, matter density parameter 0.315, and present dark matter density $\rho_{\mathrm{DM},0}$ of 1.26~keV~cm$^{-3}$\cite{planck2018parameters}. The speed of light $c$ is restored in this flux expression.
 
-The published solar study projects a two-sigma coupling reach of $(4.7$--$6.6)\times10^{-11}$~GeV$^{-1}$ for masses below $10^{-4}$~eV, using approximately 1,000~cm$^2$ and $10^6$~s\cite{davoudiasl2008gecosax}. This motivates further study. DarkNESS's 12~cm$^2$ area and wide aperture require a separate forecast under the adopted stellar bound and the CAST 95\% limit of $5.8\times10^{-11}$~GeV$^{-1}$ for masses below approximately 0.02~eV\cite{cast2024extended}.
+% % Continuum estimate: integrate Eq. (3) from 1 to 3.5 keV using
+% % H(z) = H0 * sqrt(0.315*(1+z)^3 + 0.685), c = 2.99792458e10 cm/s,
+% % 1 Mpc = 3.085677581491367e24 cm, and 1 Gyr = 3.16e16 s.
+% % Multiply by P = 4.4817e-18, A*Omega = 12*0.0955 cm^2 sr,
+% % efficiency = 0.5, and T = 23400*187 s. This is an illustrative
+% % constant-response continuum estimate, separate from the handout's line.
+% % A benchmark from literature adopts a coupling of $4.7\times10^{-11}$~GeV$^{-1}$ and a fraction divided by lifetime of $4.0\times10^{-3}$~Gyr$^{-1}$, near the selected stellar and cosmological bounds\cite{dolan2022globular,nygaard2021decaying}. A coherent field integral of 91~T~m, 12~cm$^2$ area, 0.0955~sr aperture (uses DarkNESS detector parameters), unit quantum efficiency, 50\% usable area, and 23,400~s per day for 187~days gives approximately $4\times10^{-4}$ continuum photons between 1 and 3.5~keV. The calculation adopts these values as an illustrative exposure. The handout's separate Galactic-line estimate gives $4.1\times10^{-3}$ photons for the same decay model\cite{darkness2026handout}. Both estimates support a negative result for this benchmark. Other cosmological production models require their own intensity normalization.
 
-\subsection{Implication for Searches}
-Diffuse counts depend on collecting area and accepted solid angle. Solar counts depend on the admitted solar flux and collecting area. A wider aperture admits additional background without increasing the solar flux once the source is enclosed. Each forecast must fold conversion through detector efficiency and usable exposure, then fit the energy and orbital dependence jointly with X-ray and particle backgrounds. Matched control exposures and particle monitoring must constrain background changes that could imitate the conversion signal.
-\section{Mission Concept}
-% TODO: CubeSat Mission Concept Study
+% % \subsection{The Solar Channel}
+% % The solar reference assumes thermal Primakoff production in the Sun through the same photon coupling that controls geomagnetic conversion. At Earth's mean distance from the Sun, the spectrum integrated over the solar disk is\cite{davoudiasl2008gecosax}
+% % \begin{equation}
+% % \frac{d\Phi_{a,\odot}}{dE}=6.02\times10^{10}g_{10}^{2}
+% %  \frac{(E/\mathrm{keV})^{2.481}e^{-E/(1.205\,\mathrm{keV})}}
+% %  {\mathrm{cm}^{2}\,\mathrm{s}\,\mathrm{keV}}.
+% % \label{eq:solar-flux}
+% % \end{equation}
+% % The mean energy is 4.2~keV. In the occulted-Sun concept, ALPs traverse Earth and convert along the transparent path between the nightside atmosphere and the satellite. The instrument points toward the occulted solar core while Earth blocks direct solar X-rays. Solar production and geomagnetic conversion each depend quadratically on the coupling, giving a fourth-power dependence of the photon rate. Atmospheric transmission, field geometry, and coherence must be evaluated along this shorter path.
 
-\section{Results and Discussion}
-% TODO: Present results and discuss their implications.
+% % The published solar study projects a two-sigma coupling reach of $(4.7$--$6.6)\times10^{-11}$~GeV$^{-1}$ for masses below $10^{-4}$~eV, using approximately 1,000~cm$^2$ and $10^6$~s\cite{davoudiasl2008gecosax}. This motivates further study. DarkNESS's 12~cm$^2$ area and wide aperture require a separate forecast under the adopted stellar bound and the CAST 95\% limit of $5.8\times10^{-11}$~GeV$^{-1}$ for masses below approximately 0.02~eV\cite{cast2024extended}.
 
-% Example figure (uncomment after adding figures/example-figure.png):
-% \begin{figure}[t]
-%     \centering
-%     \includegraphics[width=\linewidth]{example-figure.png}
-%     \caption{Describe the figure.}
-%     \label{fig:example}
-% \end{figure}
+% \subsection{Implication for Searches}
+% % Diffuse counts depend on collecting area and accepted solid angle. Solar counts depend on the admitted solar flux and collecting area. A wider aperture admits additional background without increasing the solar flux once the source is enclosed. Each forecast must fold conversion through detector efficiency and usable exposure, then fit the energy and orbital dependence jointly with X-ray and particle backgrounds. Matched control exposures and particle monitoring must constrain background changes that could imitate the conversion signal.
+% \section{Mission Concept}
+% % TODO: CubeSat Mission Concept Study
 
-\section{Conclusion}
-% TODO: Summarize the findings and identify next steps.
+% \section{Results and Discussion}
+% % TODO: Present results and discuss their implications.
+
+% % Example figure (uncomment after adding figures/example-figure.png):
+% % \begin{figure}[t]
+% %     \centering
+% %     \includegraphics[width=\linewidth]{example-figure.png}
+% %     \caption{Describe the figure.}
+% %     \label{fig:example}
+% % \end{figure}
+
+% \section{Conclusion and Future Work}
+% % TODO: Summarize the findings and identify next steps.
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
