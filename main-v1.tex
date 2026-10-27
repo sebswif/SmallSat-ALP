@@ -1,6 +1,8 @@
 \documentclass[10pt,letterpaper,twocolumn]{article}
 \usepackage{smallsat2026}
 \usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
 
 \providecommand{\smallsatauthor}{Kankanala}
 \providecommand{\smallsatconference}{41st Annual Small Satellite Conference}
@@ -43,18 +45,14 @@ For years, scientists have tried to understand the nature of dark matter, an elu
 
 Charge-Coupled Devices (CCDs) are silicon-based detectors that detect ionizing radiation and convert it into digital signals or a quantitative dataset. These devices are based on the photoelectric effect. The surface of a CCD is divided into squares called “pixels” and when a photon strikes a pixel, it knocks the electrons free, after which these charges are measured and converted into an image. Skipper-CCDs are an advanced version of traditional CCDs and have significantly less readout noise compared to standard CCDs. In a standard CCD, the pixel charge is dumped onto the output node, measured once and drained, losing the charge packet. However, a Skipper CCD has a modified output stage that allows this charge to be measured and “skipped” back and forth for repeated, non-destructive, and independent measurements. Averaging these measurements supports searches for low-energy ionization and X-ray events~\cite{alpine2025darkness}.
 
-DarkNESS is a 6U CubeSat deployed in Low Earth Orbit (LEO) that serves as both a targeted dark matter search and a technology demonstration for Skipper-CCDs in the space environment. It aims to detect dark matter through Skipper-CCDs, which have demonstrated laboratory sensitivity to X-rays from hypothetical dark matter decay. Operating Skipper-CCDs in LEO avoids Earth's shielding effects that limit underground experiments and is useful for observing X-ray signals and dark matter model signals, which are attenuated in Earth's atmosphere before reaching underground instruments. The published design has two main scientific objectives\cite{alpine2025darkness}:
+DarkNESS is a 6U CubeSat deployed in Low Earth Orbit (LEO) that serves as both a targeted dark matter search and a technology demonstration for Skipper-CCDs in the space environment. It aims to detect dark matter through Skipper-CCDs, which have demonstrated laboratory sensitivity to X-rays from hypothetical dark matter decay. Operating Skipper-CCDs in LEO avoids Earth's shielding effects that limit underground experiments and is useful for observing X-ray signals and dark matter model signals, which are attenuated in Earth's atmosphere before reaching underground instruments. The published design has two main scientific objectives: search for strongly interacting sub-GeV dark matter and search for X-rays from dark matter decay \cite{alpine2025darkness}.
 
-\begin{enumerate}
-  \item \textbf{Search for strongly interacting sub-GeV dark matter.}
-
-  \item \textbf{Search for X-rays from dark matter decay.}
-    \cite{alpine2025darkness}.
-\end{enumerate}
 
 Although the DarkNESS detector configuration is suitable for its proposed scientific objectives, its wide field of view and non-focusing design presents limitations for other astrophysical observations. The CubeSat's bare detectors observe a large area without using focusing instruments to concentrate signals at one point on the detector. A bare detector is useful when searching for diffuse signals distributed over a large section of the sky, but it also allows photons from unrelated astrophysical sources to contribute to the measured background. There are other branches of dark matter theory that could benefit from an optical design, as it collects photons over a large field of view and concentrates them onto a smaller detector region. 
 
-One possible application of an optical design is the search for axion-like particles (ALPs), which are hypothetical pseudoscalar particles that may be connected to dark matter and early-universe physics. Depending on their properties, ALPs may contribute to dark matter, be produced within astrophysical environments, or generate observable photons through interactions with electromagnetic fields. Studies have investigated the contribution of decaying ALPs to the cosmic radiation background and the possibility of detecting solar axions through their conversion into X-rays in the Earth's magnetic field \cite{porrasbedmar2024decaying,davoudiasl2008gecosax}.
+One possible application of an optical design is the search for Axion-Like Particles (ALPs), which are hypothetical pseudoscalar particles that may be connected to dark matter and early-universe physics. Depending on their properties, ALPs may contribute to dark matter, be produced within astrophysical environments, or generate observable photons through interactions with electromagnetic fields. Studies have investigated the contribution of decaying ALPs to the cosmic radiation background and the possibility of detecting solar axions through their conversion into X-rays in the Earth's magnetic field \cite{porrasbedmar2024decaying,davoudiasl2008gecosax}.
+
+Miniaturized X-ray optics have been developed and studied for CubeSat platforms, with applications including focused X-ray imaging, spectroscopy, and observations of astrophysical transients \cite{baca2016vzlusat,stupl2018cubex,daniel2022xray}. Searches for ALP-induced distortions in astrophysical X-ray spectra have also constrained the ALP-photon coupling, providing broader scientific motivation for investigating the capabilities of an optics-equipped Skipper-CCD CubeSat \cite{reynolds2020alp}.
 
 The purpose of this paper is to investigate the feasibility of adapting a Skipper-CCD CubeSat architecture for astrophysical ALP observations, with an emphasis on the use of X-ray optics and geomagnetic conversion. Two possible source channels are considered: a cosmological channel associated with ALPs originating outside the solar system and a solar channel associated with ALPs produced in the Sun. These channels differ in their expected energy distributions, arrival directions, and underlying production mechanisms. Their differences play an important role when performing a trade study between bare detectors and detectors with optics.  
 
@@ -97,7 +95,7 @@ In this equation, $\mathcal{L}$ represents the effective interaction Lagrangian 
 
  An ALP with a photon coupling can "convert" into a photon in a transverse magnetic field, approximately preserving its energy. The reference calculation assumes weak mixing, negligible absorption, and coherent conversion along the accepted ray\cite{yamamoto2020alp,davoudiasl2008gecosax}
 
- The Earth's magnetic field offers a naturallly occuring environment for ALP-photon conversion. Although weaker than the fields generated by laboratory magnets, it extends over a significantly larger distance. An ALP traveling through this region may therefore have a non-zero probability of converting into a photon before reaching a detector \cite{davoudiasl2008gecosax}. For a simplified case involving a uniform transverse magnetic field, negligible absorption, and weak ALP-photon mixing, the conversion probability can be written as
+ The Earth's magnetic field offers a naturally occurring environment for ALP-photon conversion. Although weaker than the fields generated by laboratory magnets, it extends over a significantly larger distance. An ALP traveling through this region may therefore have a non-zero probability of converting into a photon before reaching a detector \cite{davoudiasl2008gecosax}. For a simplified case involving a uniform transverse magnetic field, negligible absorption, and weak ALP-photon mixing, the conversion probability in vacuum can be written as
  \begin{equation}
 P_{a\rightarrow\gamma}
 =
@@ -107,7 +105,7 @@ P_{a\rightarrow\gamma}
 \right],
 \end{equation}
 
-where $B_T$ is the magnetic-field component perpendicular to the direction of propagation, $L$ is the conversion path length. The ALP-photon momentum transfer is defined as 
+where $B_T$ is the magnetic-field component perpendicular to the direction of propagation, $L$ is the conversion path length. The ALP-photon momentum transfer in vacuum is defined as 
 
 \begin{equation}
 q \simeq \frac{m_a^2}{2E_a},
@@ -131,13 +129,26 @@ For a CubeSat, the importance of this mechanism is that the Earth's magnetic fie
 
 ALPs may originate from different astrophysical environments, and the properties of their resuting signals depend on their production mechanisms and interactions with electromagnetic fields. This study considers two possible source channels: cosmological and solar. The differences in their expected energy distributions, arrival directions and detection mechanisms are important when determining which channel is better suited for observation using a CubeSat equipped with Skipper-CCDs and potentially, optics. 
 
-\subsection{Cosmological ALP Channel}
+\subsection{Cosmological ALP Channel} 
 
-The cosmological channel considers ALPs that may have been produced in the early universe or through distant astrophysical processes. Depending on their mass, lifetime, and interaction strength, these particles may contribute to the dark matter population or produce observable radiation through their decay into photons. One possible signature is an additional contribution to  the cosmic background, which consists of diffuse electromagnetic radiation originating from outside the Milky Way. 
+The cosmological channel considers ALPs that may have been produced in the early universe or through distant astrophysical processes. (work in progress)
+% Depending on their mass, lifetime, and interaction strength, these particles may contribute to the dark matter population or produce observable radiation through their decay into photons.
+% One possible signature is an additional contribution to  the cosmic background, which consists of diffuse electromagnetic radiation originating from outside the Milky Way. 
 
-Upon investigating the contribution of decaying ALP dark matter to the cosmic background, particularly across optical and X-ray energy bands, a model was proposed. In this model, ALPs decay into two photons, producing radiation that contributes to the observed cosmic background.  
+% Upon investigating the contribution of decaying ALP dark matter to the cosmic background, particularly across optical and X-ray energy bands, a model was proposed. In this model, ALPs decay into two photons, producing radiation that contributes to the observed cosmic background.  
 
 \subsection{Solar ALP Channel}
+
+Figure~\ref{fig:geometry} shows the conversion geometry associated with solar ALPs. (work in progress)
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/geometry.png}
+    \caption{The geometry of the plane containing the Sun direction and the geomagnetic dipole axis at the same time. Each colored line is the ray from a position on the 500 km orbit (solid circle) toward the Sun, ending at the 60 km shell (dotted). Color gives strength of the magnetic field from IGRF-14, and red arrows show the local field direction. Dashed lines mark the edge of the Earth's shadow, and thin blue curves are dipole field lines for orientation. Two effects set the conversion strength. The first is path length: 440 km straight down at the anti-Sun point, against 1770 km for a ray skimming the atmosphere. The second is the angle between the ray and the field: where the field turns parallel to the ray, conversion vanishes}
+    \label{fig:geometry}
+\end{figure}
+
+\clearpage
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
